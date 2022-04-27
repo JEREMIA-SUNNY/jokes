@@ -35,7 +35,7 @@ const Joke = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://api.voicerss.org/?key=07b98d289c0e4464ba4ae39062f4cb6e&hl=en-us&c=MP3&f=16khz_16bit_stereo&src=${jokes}${jokes2}`
+          `http://api.voicerss.org/?key=07b98d289c0e4464ba4ae39062f4cb6e&hl=en-us&c=MP3&f=16khz_16bit_stereo&src=${jokes}`
         ).then((data) => {
           setAud(data.url);
         });

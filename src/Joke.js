@@ -3,20 +3,19 @@ import { BiLaugh } from "react-icons/bi";
 import ReactAudioPlayer from "react-audio-player";
 const Joke = () => {
   const [arr, setArr] = useState([]);
-  const [arr2, setArr2] = useState([]);
   const [jokes, setJoke] = useState("");
   const [jokes2, setJoke2] = useState("");
   const [aud, setAud] = useState("");
   useEffect(() => {
-    const url = "https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Christmas?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single&amount=10";
+    const url =
+      "https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Christmas?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single&amount=10";
 
     const fetchData = async () => {
       try {
         const response = await fetch(url);
-        const {jokes} = await response.json();
-          setArr(jokes);
-         setJoke(jokes[0].jokes);
-      
+        const { jokes } = await response.json();
+        setArr(jokes);
+        setJoke(jokes[0].jokes);
       } catch (error) {
         console.log("error", error);
       }
@@ -34,8 +33,8 @@ const Joke = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `http://api.voicerss.org/?key=07b98d289c0e4464ba4ae39062f4cb6e&hl=en-us&c=MP3&f=16khz_16bit_stereo&src=${jokes}`
+        await fetch(
+          `https://api.voicerss.org/?key=07b98d289c0e4464ba4ae39062f4cb6e&hl=en-us&c=MP3&f=16khz_16bit_stereo&src=${jokes}`
         ).then((data) => {
           setAud(data.url);
         });
@@ -61,7 +60,7 @@ const Joke = () => {
       <div className="joketext">
         <h4>{jokes}</h4>
         <h3>{jokes2}</h3>
-        <ReactAudioPlayer src={aud} autoPlay controls q/>
+        <ReactAudioPlayer src={aud} autoPlay controls q />
       </div>
     </div>
   );

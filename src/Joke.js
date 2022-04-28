@@ -58,7 +58,6 @@ const Joke = () => {
       </button>
       <div className="joketext">
         <h4>{jokes}</h4>
-        <h3>{jokes2}</h3>
         <ReactAudioPlayer src={aud} autoPlay controls q />
       </div>
     </div>

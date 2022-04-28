@@ -4,7 +4,6 @@ import ReactAudioPlayer from "react-audio-player";
 const Joke = () => {
   const [arr, setArr] = useState([]);
   const [jokes, setJoke] = useState("");
-  const [jokes2, setJoke2] = useState("");
   const [aud, setAud] = useState("");
   useEffect(() => {
     const url =
